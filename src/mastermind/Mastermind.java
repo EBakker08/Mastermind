@@ -22,18 +22,18 @@ public class Mastermind {
 			String x = "x";
 	
 			// input vakjes/ code vakjes
-			String codeVakje1 = blue;
-			String codeVakje2 = orange;
-			String codeVakje3 = purple;
+			String codeVakje1 = red;
+			String codeVakje2 = blue;
+			String codeVakje3 = green;
 			String codeVakje4 = yellow;
-//			String x1 = red;
-//			String x2 = green;
+//			String wrongColor1 = orange;
+//			String wrongColor2 = purple;
 			
 			//win/lose statements
 			String winStatement = "Congratulations, you won!";
 			String loseStatement = "10 rounds are over. You lose.";
 			
-			System.out.println("Welcome to Mastermind!\nIn this game you have to guess the right code."); //intro van de game
+			System.out.println("Welcome to Mastermind!\nIn this game you have to guess the right code.");
 
 			//game
 			int round = 1;
