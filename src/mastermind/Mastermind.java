@@ -8,7 +8,7 @@ public class Mastermind {
 
 		Scanner mastermind = new Scanner(System.in);
 
-		// codekraker
+//		kleur keuzes
 		String red = "red";
 		String blue = "blue";
 		String green = "green";
@@ -16,39 +16,39 @@ public class Mastermind {
 		String orange = "orange";
 		String purple = "purple";
 
-		// codemaker/controlles
+//		controlle kleuren
 		String white = "white";
 		String black = "black";
 		String x = "x";
 
-		// input vakjes/ code vakjes
+//		code vakjes
 		String codeVakje1 = red;
 		String codeVakje2 = blue;
 		String codeVakje3 = green;
 		String codeVakje4 = yellow;
-//		String wrongColor1 = orange;
-//		String wrongColor2 = purple;
 
-		// win/lose statements
+//		win/lose statements
 		String winStatement = "Congratulations, you won!";
 		String loseStatement = "10 rounds are over. You lose.";
 
+//		intro/welcome statement
 		System.out.println("Welcome to Mastermind!\nIn this game you have to guess the right code.");
 
-		// game
+//		ronde variab]e
 		int round = 1;
 
-		// loop
+//		de loop
 		do {
+//			uitleg
 			System.out.println("Round: " + round + "/10.\nYou can choose between Red, Blue, Yellow, Green, Purple and Orange.");
 
-			// user input
+//			user input variablen
 			String input1 = mastermind.next();
 			String input2 = mastermind.next();
 			String input3 = mastermind.next();
 			String input4 = mastermind.next();
 
-			// input 1
+//			input 1 check
 			if (input1.equalsIgnoreCase(codeVakje1)) {
 				System.out.println(black);
 			} else {
@@ -67,7 +67,7 @@ public class Mastermind {
 				}
 			}
 
-			// Input 2
+//			input 2 check
 			if (input2.equalsIgnoreCase(codeVakje2)) {
 				System.out.println(black);
 			} else {
@@ -86,7 +86,7 @@ public class Mastermind {
 				}
 			}
 
-			// Input 3
+//			input 3 check
 			if (input3.equalsIgnoreCase(codeVakje3)) {
 				System.out.println(black);
 			} else {
@@ -105,7 +105,7 @@ public class Mastermind {
 				}
 			}
 
-			// Input 4
+//			input 4
 			if (input4.equalsIgnoreCase(codeVakje4)) {
 				System.out.println(black);
 			} else {
@@ -124,13 +124,13 @@ public class Mastermind {
 				}
 			}
 
-			// controlle gebied
+//			
 			if (input1.equalsIgnoreCase(codeVakje1)) {
 				if (input2.equalsIgnoreCase(codeVakje2)) {
 					if (input3.equalsIgnoreCase(codeVakje3)) {
 						if (input4.equalsIgnoreCase(codeVakje4)) {
 							round = 12;
-						} else { 	//else = next round
+						} else { // else = volgende ronde
 							round = round + 1;
 						}
 					} else {
@@ -142,10 +142,11 @@ public class Mastermind {
 			} else {
 				round = round + 1;
 			}
-		} // end Do loop
+		} // einde Do loop
 
-		// win/lose conditions
+//		win/lose condities
 		while (round < 11);
+
 		if (round == 11) {
 			System.out.println(loseStatement);
 		} else {
