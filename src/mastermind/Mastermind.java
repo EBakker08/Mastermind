@@ -22,10 +22,10 @@ public class Mastermind {
 		String x = "x";
 
 //		code vakjes
-		String codeVakje1 = red;
-		String codeVakje2 = blue;
-		String codeVakje3 = green;
-		String codeVakje4 = yellow;
+		String codeVakje1 = blue;
+		String codeVakje2 = green;
+		String codeVakje3 = purple;
+		String codeVakje4 = red;
 
 //		win/lose statements
 		String winStatement = "Congratulations, you won!";
