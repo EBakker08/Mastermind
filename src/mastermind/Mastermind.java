@@ -8,7 +8,7 @@ public class Mastermind {
 
 		Scanner mastermind = new Scanner(System.in);
 
-//		kleur keuzes
+//		kleur keuzes Hier kan een list
 		String red = "red";
 		String blue = "blue";
 		String green = "green";
@@ -16,7 +16,7 @@ public class Mastermind {
 		String orange = "orange";
 		String purple = "purple";
 
-//		controlle kleuren
+//		controlle kleuren Hier kan een list
 		String white = "white";
 		String black = "black";
 		String x = "x";
@@ -42,7 +42,7 @@ public class Mastermind {
 //			uitleg
 			System.out.println("Round: " + round + "/10.\nYou can choose between Red, Blue, Yellow, Green, Purple and Orange.");
 
-//			user input variablen
+//			user input variablen Hier kan een list
 			String input1 = mastermind.next();
 			String input2 = mastermind.next();
 			String input3 = mastermind.next();
