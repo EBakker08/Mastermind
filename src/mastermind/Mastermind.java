@@ -6,131 +6,130 @@ public class Mastermind {
 
 	public static void main(String[] args) {
 
-		Scanner mastermind = new Scanner(System.in);
+		Scanner mastermind = new Scanner(System.in);	//Start scanner
 
-//		kleur keuzes Hier kan een list
-		String red = "red";
-		String blue = "blue";
-		String green = "green";
-		String yellow = "yellow";
-		String orange = "orange";
-		String purple = "purple";
+//		User colors
+		String[] colors =
+			{"red", "blue", "green", "yellow", "orange", "purple" };
+		
+//		Check colors:
+		String[] checkColors =
+			{"black", "white", "x"};
+		
+		String[] codeVakjes =
+				{"codeVakje1", "codeVakje2", "codeVakje3", "codeVakje4"};
+		
+		codeVakjes[0] = colors[0];
+		codeVakjes[1] = colors[1];
+		codeVakjes[2] = colors[2];
+		codeVakjes[3] = colors[3];
 
-//		controlle kleuren Hier kan een list
-		String white = "white";
-		String black = "black";
-		String x = "x";
-
-//		code vakjes
-		String codeVakje1 = blue;
-		String codeVakje2 = green;
-		String codeVakje3 = purple;
-		String codeVakje4 = red;
-
-//		win/lose statements
+//		System.out.println(codeVakje1 + codeVakje2 + codeVakje3 + codeVakje4 + "\n");
+		
+//		Win/lose statements
 		String winStatement = "Congratulations, you won!";
 		String loseStatement = "10 rounds are over. You lose.";
 
-//		intro/welcome statement
+//		Introduction/welcome statement
 		System.out.println("Welcome to Mastermind!\nIn this game you have to guess the right code.");
 
-//		ronde variab]e
+//		Round variable
 		int round = 1;
 
-//		de loop
+//		The game (check) loop
 		do {
-//			uitleg
+//			Uitleg
 			System.out.println("Round: " + round + "/10.\nYou can choose between Red, Blue, Yellow, Green, Purple and Orange.");
 
-//			user input variablen Hier kan een list
+//			uUser input variablen Hier kan een list
 			String input1 = mastermind.next();
 			String input2 = mastermind.next();
 			String input3 = mastermind.next();
 			String input4 = mastermind.next();
 
-//			input 1 check
-			if (input1.equalsIgnoreCase(codeVakje1)) {
-				System.out.println(black);
+//			Input 1 check
+			if (input1.equalsIgnoreCase(codeVakjes[0])) {
+				System.out.println(checkColors[0]);
 			} else {
-				if (input1.equalsIgnoreCase(codeVakje2)) {
-					System.out.println(white);
+				if (input1.equalsIgnoreCase(codeVakjes[1])) {
+					System.out.println(checkColors[1]);
 				} else {
-					if (input1.equalsIgnoreCase(codeVakje3)) {
-						System.out.println(white);
+					if (input1.equalsIgnoreCase(codeVakjes[2])) {
+						System.out.println(checkColors[1]);
 					} else {
-						if (input1.equalsIgnoreCase(codeVakje4)) {
-							System.out.println(white);
+						if (input1.equalsIgnoreCase(codeVakjes[3])) {
+							System.out.println(checkColors[1]);
 						} else {
-							System.out.println(x);
+							System.out.println(checkColors[2]);
 						}
 					}
 				}
-			}
+			}	//End input 1
 
-//			input 2 check
-			if (input2.equalsIgnoreCase(codeVakje2)) {
-				System.out.println(black);
+//			Input 2 check
+			if (input2.equalsIgnoreCase(codeVakjes[1])) {
+				System.out.println(checkColors[0]);
 			} else {
-				if (input2.equalsIgnoreCase(codeVakje1)) {
-					System.out.println(white);
+				if (input2.equalsIgnoreCase(codeVakjes[0])) {
+					System.out.println(checkColors[1]);
 				} else {
-					if (input2.equalsIgnoreCase(codeVakje3)) {
-						System.out.println(white);
+					if (input2.equalsIgnoreCase(codeVakjes[2])) {
+						System.out.println(checkColors[1]);
 					} else {
-						if (input2.equalsIgnoreCase(codeVakje4)) {
-							System.out.println(white);
+						if (input2.equalsIgnoreCase(codeVakjes[3])) {
+							System.out.println(checkColors[1]);
 						} else {
-							System.out.println(x);
+							System.out.println(checkColors[2]);
 						}
 					}
 				}
-			}
+			}	//end input 2
 
-//			input 3 check
-			if (input3.equalsIgnoreCase(codeVakje3)) {
-				System.out.println(black);
+//			Input 3 check
+			if (input3.equalsIgnoreCase(codeVakjes[2])) {
+				System.out.println(checkColors[0]);
 			} else {
-				if (input3.equalsIgnoreCase(codeVakje1)) {
-					System.out.println(white);
+				if (input3.equalsIgnoreCase(codeVakjes[0])) {
+					System.out.println(checkColors[1]);
 				} else {
-					if (input3.equalsIgnoreCase(codeVakje2)) {
-						System.out.println(white);
+					if (input3.equalsIgnoreCase(codeVakjes[1])) {
+						System.out.println(checkColors[1]);
 					} else {
-						if (input3.equalsIgnoreCase(codeVakje4)) {
-							System.out.println(white);
+						if (input3.equalsIgnoreCase(codeVakjes[3])) {
+							System.out.println(checkColors[1]);
 						} else {
-							System.out.println(x);
+							System.out.println(checkColors[2]);
 						}
 					}
 				}
-			}
+			}	//End input 3
 
-//			input 4
-			if (input4.equalsIgnoreCase(codeVakje4)) {
-				System.out.println(black);
+//			Input 4 check
+			if (input4.equalsIgnoreCase(codeVakjes[3])) {
+				System.out.println(checkColors[0]);
 			} else {
-				if (input4.equalsIgnoreCase(codeVakje1)) {
-					System.out.println(white);
+				if (input4.equalsIgnoreCase(codeVakjes[0])) {
+					System.out.println(checkColors[1]);
 				} else {
-					if (input4.equalsIgnoreCase(codeVakje2)) {
-						System.out.println(white);
+					if (input4.equalsIgnoreCase(codeVakjes[1])) {
+						System.out.println(checkColors[1]);
 					} else {
-						if (input4.equalsIgnoreCase(codeVakje3)) {
-							System.out.println(white);
+						if (input4.equalsIgnoreCase(codeVakjes[2])) {
+							System.out.println(checkColors[1]);
 						} else {
-							System.out.println(x);
+							System.out.println(checkColors[2]);
 						}
 					}
 				}
-			}
+			}	//End input 4
 
-//			
-			if (input1.equalsIgnoreCase(codeVakje1)) {
-				if (input2.equalsIgnoreCase(codeVakje2)) {
-					if (input3.equalsIgnoreCase(codeVakje3)) {
-						if (input4.equalsIgnoreCase(codeVakje4)) {
+//			Game won check:
+			if (input1.equalsIgnoreCase(codeVakjes[0])) {
+				if (input2.equalsIgnoreCase(codeVakjes[1])) {
+					if (input3.equalsIgnoreCase(codeVakjes[2])) {
+						if (input4.equalsIgnoreCase(codeVakjes[3])) {
 							round = 12;
-						} else { // else = volgende ronde
+						} else {	// Else = next round
 							round = round + 1;
 						}
 					} else {
@@ -141,19 +140,17 @@ public class Mastermind {
 				}
 			} else {
 				round = round + 1;
-			}
-		} // einde Do loop
+			}	//End of game won check
+		}	// End of do loop
 
-//		win/lose condities
+//		Win/lose conditions
 		while (round < 11);
-
 		if (round == 11) {
 			System.out.println(loseStatement);
 		} else {
 			System.out.println(winStatement);
 		}
 
-		mastermind.close();
+		mastermind.close(); //End scanner
 	}
-
-}
+}	//End program
