@@ -1,13 +1,16 @@
 package mastermind;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Mastermind {
 
 	public static void main(String[] args) {
-
+		Random randomCode = new Random();
 		Scanner mastermind = new Scanner(System.in);	//Start scanner
-
+		
+//		----------------------------------------------------------------------------------------------------------------------------
+		
 //		User colors
 		String[] colors =
 			{"red", "blue", "green", "yellow", "orange", "purple" };
@@ -19,45 +22,48 @@ public class Mastermind {
 		String[] codeVakjes =
 				{"codeVakje1", "codeVakje2", "codeVakje3", "codeVakje4"};
 		
-		codeVakjes[0] = colors[0];
-		codeVakjes[1] = colors[1];
-		codeVakjes[2] = colors[2];
-		codeVakjes[3] = colors[3];
-
-//		System.out.println(codeVakje1 + codeVakje2 + codeVakje3 + codeVakje4 + "\n");
+		for (int i = 0; i < codeVakjes.length; i++) {
+		    codeVakjes[i] = colors[randomCode.nextInt(colors.length)];
+		}
 		
 //		Win/lose statements
 		String winStatement = "Congratulations, you won!";
 		String loseStatement = "10 rounds are over. You lose.";
 
 //		Introduction/welcome statement
-		System.out.println("Welcome to Mastermind!\nIn this game you have to guess the right code.");
+		System.out.println("Welcome to Mastermind!\nIn this game you have to guess the right code.\n(The code can include multiple of the same colors.)");
 
 //		Round variable
 		int round = 1;
 
+//		-----------------------------------------------------------------------------------------------------------------------------
+		
 //		The game (check) loop
 		do {
 //			Uitleg
 			System.out.println("Round: " + round + "/10.\nYou can choose between Red, Blue, Yellow, Green, Purple and Orange.");
 
-//			uUser input variablen Hier kan een list
-			String input1 = mastermind.next();
-			String input2 = mastermind.next();
-			String input3 = mastermind.next();
-			String input4 = mastermind.next();
+//			User input variablen Hier kan een list
+			System.out.println("🫃🫃🫃🫃🫃");
+			String[] userInput =
+				{"input1", "input2", "input3", "input4"};
+			
+			userInput[0] = mastermind.next();
+			userInput[1] = mastermind.next();
+			userInput[2] = mastermind.next();
+			userInput[3] = mastermind.next();
 
 //			Input 1 check
-			if (input1.equalsIgnoreCase(codeVakjes[0])) {
+			if (userInput[0].equalsIgnoreCase(codeVakjes[0])) {
 				System.out.println(checkColors[0]);
 			} else {
-				if (input1.equalsIgnoreCase(codeVakjes[1])) {
+				if (userInput[0].equalsIgnoreCase(codeVakjes[1])) {
 					System.out.println(checkColors[1]);
 				} else {
-					if (input1.equalsIgnoreCase(codeVakjes[2])) {
+					if (userInput[0].equalsIgnoreCase(codeVakjes[2])) {
 						System.out.println(checkColors[1]);
 					} else {
-						if (input1.equalsIgnoreCase(codeVakjes[3])) {
+						if (userInput[0].equalsIgnoreCase(codeVakjes[3])) {
 							System.out.println(checkColors[1]);
 						} else {
 							System.out.println(checkColors[2]);
@@ -67,16 +73,16 @@ public class Mastermind {
 			}	//End input 1
 
 //			Input 2 check
-			if (input2.equalsIgnoreCase(codeVakjes[1])) {
+			if (userInput[1].equalsIgnoreCase(codeVakjes[1])) {
 				System.out.println(checkColors[0]);
 			} else {
-				if (input2.equalsIgnoreCase(codeVakjes[0])) {
+				if (userInput[1].equalsIgnoreCase(codeVakjes[0])) {
 					System.out.println(checkColors[1]);
 				} else {
-					if (input2.equalsIgnoreCase(codeVakjes[2])) {
+					if (userInput[1].equalsIgnoreCase(codeVakjes[2])) {
 						System.out.println(checkColors[1]);
 					} else {
-						if (input2.equalsIgnoreCase(codeVakjes[3])) {
+						if (userInput[1].equalsIgnoreCase(codeVakjes[3])) {
 							System.out.println(checkColors[1]);
 						} else {
 							System.out.println(checkColors[2]);
@@ -86,16 +92,16 @@ public class Mastermind {
 			}	//end input 2
 
 //			Input 3 check
-			if (input3.equalsIgnoreCase(codeVakjes[2])) {
+			if (userInput[2].equalsIgnoreCase(codeVakjes[2])) {
 				System.out.println(checkColors[0]);
 			} else {
-				if (input3.equalsIgnoreCase(codeVakjes[0])) {
+				if (userInput[2].equalsIgnoreCase(codeVakjes[0])) {
 					System.out.println(checkColors[1]);
 				} else {
-					if (input3.equalsIgnoreCase(codeVakjes[1])) {
+					if (userInput[2].equalsIgnoreCase(codeVakjes[1])) {
 						System.out.println(checkColors[1]);
 					} else {
-						if (input3.equalsIgnoreCase(codeVakjes[3])) {
+						if (userInput[2].equalsIgnoreCase(codeVakjes[3])) {
 							System.out.println(checkColors[1]);
 						} else {
 							System.out.println(checkColors[2]);
@@ -105,16 +111,16 @@ public class Mastermind {
 			}	//End input 3
 
 //			Input 4 check
-			if (input4.equalsIgnoreCase(codeVakjes[3])) {
+			if (userInput[3].equalsIgnoreCase(codeVakjes[3])) {
 				System.out.println(checkColors[0]);
 			} else {
-				if (input4.equalsIgnoreCase(codeVakjes[0])) {
+				if (userInput[3].equalsIgnoreCase(codeVakjes[0])) {
 					System.out.println(checkColors[1]);
 				} else {
-					if (input4.equalsIgnoreCase(codeVakjes[1])) {
+					if (userInput[3].equalsIgnoreCase(codeVakjes[1])) {
 						System.out.println(checkColors[1]);
 					} else {
-						if (input4.equalsIgnoreCase(codeVakjes[2])) {
+						if (userInput[3].equalsIgnoreCase(codeVakjes[2])) {
 							System.out.println(checkColors[1]);
 						} else {
 							System.out.println(checkColors[2]);
@@ -124,22 +130,22 @@ public class Mastermind {
 			}	//End input 4
 
 //			Game won check:
-			if (input1.equalsIgnoreCase(codeVakjes[0])) {
-				if (input2.equalsIgnoreCase(codeVakjes[1])) {
-					if (input3.equalsIgnoreCase(codeVakjes[2])) {
-						if (input4.equalsIgnoreCase(codeVakjes[3])) {
+			if (userInput[0].equalsIgnoreCase(codeVakjes[0])) {
+				if (userInput[1].equalsIgnoreCase(codeVakjes[1])) {
+					if (userInput[2].equalsIgnoreCase(codeVakjes[2])) {
+						if (userInput[3].equalsIgnoreCase(codeVakjes[3])) {
 							round = 12;
 						} else {	// Else = next round
-							round = round + 1;
+							round++;
 						}
 					} else {
-						round = round + 1;
+						round++;
 					}
 				} else {
-					round = round + 1;
+					round++;
 				}
 			} else {
-				round = round + 1;
+				round++;
 			}	//End of game won check
 		}	// End of do loop
 
@@ -150,7 +156,8 @@ public class Mastermind {
 		} else {
 			System.out.println(winStatement);
 		}
-
+//		----------------------------------------------------------------------------------------------------------------------------
+		
 		mastermind.close(); //End scanner
 	}
 }	//End program
