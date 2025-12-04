@@ -13,7 +13,7 @@ public class Mastermind {
 		
 //		User colors
 		String[] colors =
-			{"red", "blue", "green", "yellow", "orange", "purple" };
+			{"red", "blue", "green", "yellow", "orange", "purple"};
 		
 //		Check colors:
 		String[] checkColors =
@@ -33,18 +33,17 @@ public class Mastermind {
 //		Introduction/welcome statement
 		System.out.println("Welcome to Mastermind!\nIn this game you have to guess the right code.\n(The code can include multiple of the same colors.)");
 
+//		-----------------------------------------------------------------------------------------------------------------------------
+		
 //		Round variable
 		int round = 1;
-
-//		-----------------------------------------------------------------------------------------------------------------------------
 		
 //		The game (check) loop
 		do {
 //			Uitleg
-			System.out.println("Round: " + round + "/10.\nYou can choose between Red, Blue, Yellow, Green, Purple and Orange.");
+			System.out.println("Round: " + round + "/10.\nYou can choose between Red, Blue, Yellow, Green, Orange and Purple.");
 
-//			User input variablen Hier kan een list
-			System.out.println("🫃🫃🫃🫃🫃");
+//			User input variablen
 			String[] userInput =
 				{"input1", "input2", "input3", "input4"};
 			
@@ -146,13 +145,14 @@ public class Mastermind {
 				}
 			} else {
 				round++;
-			}	//End of game won check
-		}	// End of do loop
+			}	//	End of game won check
+		}	//	End of do loop
 
 //		Win/lose conditions
 		while (round < 11);
 		if (round == 11) {
-			System.out.println(loseStatement);
+			System.out.println(loseStatement + "\n");
+			System.out.println("The code was:\n" + codeVakjes[0] + "\n" + codeVakjes[1] + "\n" + codeVakjes[2] + "\n" + codeVakjes[3]);
 		} else {
 			System.out.println(winStatement);
 		}
