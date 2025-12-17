@@ -1,31 +1,21 @@
 
 package mastermind;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Mastermind {
 
 	public static void main(String[] args) {
-		Random randomCode = new Random();
 		Scanner mastermind = new Scanner(System.in);	//Start scanner
+		Helper helper = new Helper();	//Start of functions	(Helper.java)
 		
-//		----------------------------------------------------------------------------------------------------------------------------
-		
-//		User colors
-		String[] colors =
-			{"red", "blue", "green", "yellow", "orange", "purple"};
+//		---------------------------------------------------------------------------------------------------------------------------
 		
 //		Check colors:
 		String[] checkColors =
 			{"black", "white", "x"};
 		
-		String[] codeVakjes =
-				{"codeVakje1", "codeVakje2", "codeVakje3", "codeVakje4"};
-		
-		for (int length = 0; length < codeVakjes.length; length++) {
-		    codeVakjes[length] = colors[randomCode.nextInt(colors.length)];
-		}
+		String[] codeVakjes = helper.codeMaken();	//Making random code
 		
 //		Win/lose statements
 		String winStatement = "Congratulations, you won!";
