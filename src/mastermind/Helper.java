@@ -6,27 +6,33 @@ import java.util.Random;
 
 public class Helper {
 	
+//	Key variables
 	Scanner sc = new Scanner(System.in);
 	Random randomCode = new Random();
 	
+//	User colors
 	String[] colors =
 		{"red", "blue", "green", "yellow", "orange", "purple"};
 	
+//	Code places
 	String[] codeVakjes =
 		{"codeVakje1", "codeVakje2", "codeVakje3", "codeVakje4"};
 	
+//	Check colors
 	String[] checkColors =
 		{"black", "white", "x"};
 	
+//	Win/lose statements
 	String winStatement = "Congratulations, you won!";
 	String loseStatement = "10 rounds are over. You lose.";
 	
 //	Begin functions
-//	Code generation
+//	Random code generation
 	public String[] codeMaking() {
-		for (int length = 0; length < codeVakjes.length; length++) {
-		    codeVakjes[length] = colors[randomCode.nextInt(colors.length)];
+		for (int length = 0; length < codeVakjes.length; length++) {	//	Repeat for whole length of codeVakjes
+		    codeVakjes[length] = colors[randomCode.nextInt(colors.length)];	//	Chooses one random color out of colors
 		}
+		
 		return codeVakjes;
 	}
 	
@@ -37,37 +43,36 @@ public class Helper {
 		int round = 1;
 		
 		do {
-			System.out.println("Round: " + round + "/10.\nYou can choose between Red, Blue, Yellow, Green, Orange and Purple.");
+			System.out.println("Round: " + round + "/10.");
 			
 			String[] userInput = {"1", "2", "3", "4"};
 
-			for (int i = 0; i < userInput.length; i++) {
-			    boolean validInput = false;
-			    while (!validInput) {	// keep asking for input until a valid color is entered
+			for (int i = 0; i < userInput.length; i++) {	//	Loop user input until 4 inputs are received
+			    boolean validInput = false;	//	user input is false by default
+			    while (!validInput) {	//	Keep asking for input until a valid color is entered
 			        try {
-//			        	read the user's input for this slot
-			            userInput[i] = sc.next();
+			            userInput[i] = sc.next();	//	Asks for user input
 
-			            // check if the input matches any of the allowed colors
+			            //	Check if the input matches any of the allowed colors
 			            for (String color : colors) {
-			                if (userInput[i].equalsIgnoreCase(color)) {
-			                    validInput = true;
-			                    break; // no need to check other colors
+			            	if (userInput[i].equalsIgnoreCase(color)) {
+			                    validInput = true;	//	User input is right, so continue to next input/check
+			                    break; //	Stops the check if user input is true
 			                }
+			            }	//	Closes for
+
+			            if (!validInput) { //	If input is not valid, try again
+			                System.out.println("Invalid color. Please enter: Red, Blue, Green, Yellow, Orange, Purple.");
 			            }
 
-			            if (!validInput) { // if input is not valid, try again
-			                System.out.println("Invalid color. Please enter one of: Red, Blue, Green, Yellow, Orange, Purple.");
-			            }
-
-			        } catch (Exception e) { // If a unexpected error occurs
+			        } catch (Exception e) { //	If a unexpected error occurs
 			            System.out.println("Invalid input, please try again.");
-			            sc.next(); // eat the invalid input so the scanner doesn't get stuck
+			            sc.next(); //	Eat the invalid input so the scanner doesn't get stuck
 			        }
 			    }
 			}
 			
-//			input 1 check
+//			Input 1 check
 			if (userInput[0].equalsIgnoreCase(codeVakjes[0])) {
 				System.out.println(checkColors[0]);
 			} else {
@@ -86,7 +91,7 @@ public class Helper {
 				}
 			}
 			
-//			input 2 check
+//			Input 2 check
 			if (userInput[1].equalsIgnoreCase(codeVakjes[1])) {
 				System.out.println(checkColors[0]);
 			} else {
@@ -105,7 +110,7 @@ public class Helper {
 				}
 			}
 			
-//			input 3 check
+//			Input 3 check
 			if (userInput[2].equalsIgnoreCase(codeVakjes[2])) {
 				System.out.println(checkColors[0]);
 			} else {
@@ -124,7 +129,7 @@ public class Helper {
 				}
 			}
 			
-//			input 4 check
+//			Input 4 check
 			if (userInput[3].equalsIgnoreCase(codeVakjes[3])) {
 				System.out.println(checkColors[0]);
 			} else {
@@ -142,7 +147,8 @@ public class Helper {
 					}
 				}
 			}
-			
+
+//			
 			if (userInput[0].equalsIgnoreCase(codeVakjes[0])) {
 				if (userInput[1].equalsIgnoreCase(codeVakjes[1])) {
 					if (userInput[2].equalsIgnoreCase(codeVakjes[2])) {
