@@ -10,10 +10,9 @@ public class Mastermind {
 		helper.codeMaking();
 		
 //		Introduction/welcome statement
-		System.out.println("Welcome to Mastermind!\nIn this game you have to guess the right code.\n(The code can include multiple of the same colors.)\nYou can choose between Red, Blue, Yellow, Green, Orange and Purple.");
+		System.out.println("Welcome to Mastermind!\nIn this game you have to guess the right code. (The code can include multiple of the same colors.)\nYou can choose between Red, Blue, Yellow, Green, Orange and Purple.");
 		
 //		User input, input check and game won check
-		helper.userInput();
-		
+		helper.userInputAndCodeCheck();
 	}
-}	//	End program
+}
